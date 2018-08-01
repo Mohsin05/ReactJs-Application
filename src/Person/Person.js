@@ -1,6 +1,5 @@
 import React from 'react';
-import './Person.css';
-import Radium from "radium";
+import styles from './Person.css';
 
 
 class Person extends React.PureComponent {
@@ -20,7 +19,7 @@ class Person extends React.PureComponent {
         }
             return (
 
-                <div className="person" style={style}>
+                <div className={styles.person} style={style}>
 
                 <p>I'm a {name} and I am {age} years old <br/>
                     <br/>
@@ -36,4 +35,4 @@ class Person extends React.PureComponent {
         };
 }
 
-export default Radium(Person);
+export default Person;
