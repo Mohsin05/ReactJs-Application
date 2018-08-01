@@ -8,18 +8,10 @@ class Person extends React.PureComponent {
 
     render() {
         const {name , age, onChanged, click} = this.props;
-        const style = {
 
-            '@media (min-width: 500px)' : {
-
-                width: '450px'
-            }
-
-
-        }
             return (
 
-                <div className={styles.person} style={style}>
+                <div className={styles.person} >
 
                 <p>I'm a {name} and I am {age} years old <br/>
                     <br/>
