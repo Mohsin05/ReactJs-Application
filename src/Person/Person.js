@@ -7,7 +7,7 @@ class Person extends React.PureComponent {
 
 
     render() {
-        const {name , age, OnChange} = this.props;
+        const {name , age, onChanged, click} = this.props;
 
             return (
 
@@ -17,8 +17,8 @@ class Person extends React.PureComponent {
                     <br/>
 
 
-                 <input type="text" onChange={OnChange} value={name}/>
-
+                 <input type="text" onChange={onChanged} value={name}/>
+                 <strong onClick={click}> Delete </strong>
                 </p>
 
                 </div>
