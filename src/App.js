@@ -19,9 +19,11 @@ class App extends Component {
 
     togglePersonHandler= ()=>{
 
+        const invertOnClick = this.state.showPerson;
+
         this.setState({
 
-           showPerson : true
+           showPerson : !invertOnClick
         });
 
     }
@@ -47,6 +49,21 @@ class App extends Component {
             cursor: 'pointer'
         };
 
+
+        let person = null;
+        if(this.state.showPerson) {
+
+            person = (
+                <div>
+                    <Person
+                        name={this.state.person[0].name}
+                        age={this.state.person[0].age}
+                        OnChange={this.inputFieldChange}
+                    />
+                </div>
+            );
+        }
+
         return (
 
       <div className="App">
@@ -55,15 +72,10 @@ class App extends Component {
         </h1>
 
           <button  style={style} onClick={this.togglePersonHandler}>Show Name</button>
-          { this.state.showPerson ?
-              <div>
-                  <Person
-                      name={this.state.person[0].name}
-                      age={this.state.person[0].age}
-                      OnChange={this.inputFieldChange}
-                  />
-              </div> : null
+
+          { person
           }
+
       </div>
     );
   }
