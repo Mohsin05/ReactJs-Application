@@ -8,6 +8,11 @@ class Person extends React.PureComponent {
 
     render() {
         const {name , age, onChanged, click} = this.props;
+        const rnd = Math.random();
+
+        if ( rnd > 0.7 ) {
+            throw new Error( 'Something went wrong' );
+        }
 
             return (
 
