@@ -13,12 +13,12 @@ class Persons extends React.PureComponent {
 
     componentWillMount() {
 
-        console.log('[Person.js] Inside componentWillMount()');
+        console.log('[Persons.js] Inside componentWillMount()');
     }
 
     componentDidMount() {
 
-        console.log('[Person.js] Inside componentDidMount()');
+        console.log('[Persons.js] Inside componentDidMount()');
     }
 
     componentWillReceiveProps ( nextProps ){
@@ -38,7 +38,7 @@ class Persons extends React.PureComponent {
 
     componentDidUpdate() {
 
-        console.log('[Person.js] Inside componentDidMount()');
+        console.log('[Persons.js] Inside componentDidMount()');
     }
 
 
@@ -51,6 +51,7 @@ class Persons extends React.PureComponent {
             persons.map((person, index) => {
                     return <Person
                         click={() => clicked(index)}
+                        position={ index}
                         name={person.name}
                         age={person.age}
                         key={person.id}
@@ -61,5 +62,7 @@ class Persons extends React.PureComponent {
 
 
 }
+
+
 
 export default Persons;

@@ -51,6 +51,21 @@ class App extends React.PureComponent {
         console.log('[Update App.js] Inside componentDidMount()');
     }
 
+    static getDerivedStateFromProps(nextProps, prevState){
+
+        console.log('[App.js ] Inside  getDerivedStateFromProps', nextProps, prevState)
+
+        return prevState;
+    }
+
+    getSnapshotBeforeUpdate () {
+
+        console.log('[App.js ] Inside  getSnapshotBeforeUpdate', nextProps, prevState)
+
+
+
+    }
+
 
     nameChangedHandler = (event, id) => {
         const personIndex = this.state.persons.findIndex(p => {
