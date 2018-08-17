@@ -58,10 +58,11 @@ class App extends React.PureComponent {
         return prevState;
     }
 
-    getSnapshotBeforeUpdate () {
+    getSnapshotBeforeUpdate ( nextProps, prevState) {
 
         console.log('[App.js ] Inside  getSnapshotBeforeUpdate', nextProps, prevState)
 
+        return nextProps;
 
 
     }
