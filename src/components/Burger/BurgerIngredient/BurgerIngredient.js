@@ -1,46 +1,46 @@
-import React from 'react';
-import classes from './BurgerIngedient.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-const burgerIngredient = (props) =>{
+import classes from './BurgerIngredient.css';
 
-    let ingregdient = null;
+class BurgerIngredient extends Component {
+    render () {
+        let ingredient = null;
 
-    switch (props.type) {
-        case ('bread-bottom'):
-            ingregdient = <div className={ classes.BreadBottom }></div>;
-            break;
+        switch ( this.props.type ) {
+            case ( 'bread-bottom' ):
+                ingredient = <div className={classes.BreadBottom}></div>;
+                break;
+            case ( 'bread-top' ):
+                ingredient = (
+                    <div className={classes.BreadTop}>
+                        <div className={classes.Seeds1}></div>
+                        <div className={classes.Seeds2}></div>
+                    </div>
+                );
+                break;
+            case ( 'meat' ):
+                ingredient = <div className={classes.Meat}></div>;
+                break;
+            case ( 'cheese' ):
+                ingredient = <div className={classes.Cheese}></div>;
+                break;
+            case ( 'bacon' ):
+                ingredient = <div className={classes.Bacon}></div>;
+                break;
+            case ( 'salad' ):
+                ingredient = <div className={classes.Salad}></div>;
+                break;
+            default:
+                ingredient = null;
+        }
 
-        case ('bread-top'):
-            ingregdient = <div className={classes.BreadTop}>
-                <div className={classes.Seeds1}></div>
-                <div className={classes.Seeds2}></div>
-            </div>
-            break;
-
-        case ('meat'):
-            ingregdient = <div className={classes.Meat}></div>
-            break;
-
-        case ('cheese'):
-            ingregdient = <div className={classes.Cheese}></div>
-            break;
-
-        case ('salad'):
-            ingregdient = <div className={classes.Salad}></div>
-            break;
-
-        case ('bacon'):
-            ingregdient = <div className={classes.Bacon}></div>
-            break;
-
-        default:
-            ingregdient = null;
+        return ingredient;
     }
+}
 
-    return ingregdient;
-
-
-
+BurgerIngredient.propTypes = {
+    type: PropTypes.string.isRequired
 };
 
-export default burgerIngredient;
+export default BurgerIngredient;
