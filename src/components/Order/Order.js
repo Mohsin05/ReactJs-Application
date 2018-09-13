@@ -14,8 +14,6 @@ const order = ( props ) => {
         );
     }
 
-
-
     const ingredientOutput = ingredients.map(ig => {
         return <span 
             style={{
